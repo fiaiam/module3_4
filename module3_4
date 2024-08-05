@@ -1,0 +1,13 @@
+def single_root_words(root_word, *other_words):
+    same_words = [] # создаем пустой список для возвращения результата
+    root_word = root_word.lower() # приведение в нижний регистр основного слова
+    for other_words_lower in other_words: 
+        other_words_lower = other_words_lower.lower() # приведение в нижний регистр доп.слов
+        if root_word in other_words_lower or other_words_lower in root_word: 
+            same_words.append(other_words_lower) # добавление в список по условию
+    return same_words        
+    
+result1 = single_root_words('rich', 'richiest', 'orichalcum', 'cheers', 'richies')
+result2 = single_root_words('Disablement', 'Able', 'Mable', 'Disable', 'Bagel')
+print(result1)
+print(result2)
